@@ -18,11 +18,11 @@ gem 'awesome_print'
 # gem 'unicorn'
 
 # gem 'capistrano-rails', group: :development
+gem 'web-console', '~> 2.0', group: :development
 
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
-  gem 'web-console', '~> 2.0'
   gem 'capybara'
   gem 'launchy'
   gem 'pry'
