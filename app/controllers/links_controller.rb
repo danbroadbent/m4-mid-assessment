@@ -11,7 +11,7 @@ class LinksController < ApplicationController
     if link.save
       redirect_to '/'
     else
-      flash[:failure] = "Link not saved"
+      flash[:notice] = "Link not valid format"
       redirect_to '/'
     end
   end
