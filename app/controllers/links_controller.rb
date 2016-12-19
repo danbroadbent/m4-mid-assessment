@@ -3,10 +3,17 @@ class LinksController < ApplicationController
 
   def index
     @link = Link.new
+    @links = Link.all
   end
 
   def create
-    link = Link.create(link_params)
+    link = Link.new(link_params)
+    if link.save
+      redirect_to '/'
+    else
+      flash[:failure] = "Link not saved"
+      redirect_to '/'
+    end
   end
 
   private

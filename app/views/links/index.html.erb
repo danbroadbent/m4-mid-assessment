@@ -6,3 +6,11 @@
   <%= f.text_field :url %>
   <%= f.submit "Submit" %>
 <% end %>
+
+<h2>Your links</h2>
+<% @links.each do |link| %>
+<div class="links">
+  <%= link.title %></br>
+  <%= link.url %>
+</div></br>
+<% end %>
