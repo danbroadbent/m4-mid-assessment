@@ -3,6 +3,14 @@ ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
+
+def user_signup
+  visit '/signup'
+  fill_in "user_username", with: "User 1"
+  fill_in "user_password", with: "password"
+  fill_in "user_password_confirmation", with: "password"
+  click_on "Submit"
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

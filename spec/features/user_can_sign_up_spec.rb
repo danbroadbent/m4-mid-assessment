@@ -6,7 +6,7 @@ describe "sign up with email and password", :type => :feature do
     expect(current_path).to eq('/signup')
   end
 
-  it "can create a new user with signup form" do
+  xit "can create a new user with signup form" do
     visit '/signup'
     fill_in "user_username", with: "User 1"
     fill_in "user_password", with: "password"
