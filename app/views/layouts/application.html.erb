@@ -7,7 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <% if current_user && current_user.id == session[:user_id] %>
+  Welcome, <%= current_user.username %>.  <%= link_to "Sign Out", '/logout', method: :get %>
+  <% end %>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+</header>
 <div class="container">
+
   <%= yield %>
 </div>
 

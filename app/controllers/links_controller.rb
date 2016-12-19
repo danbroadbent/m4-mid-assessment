@@ -16,6 +16,20 @@ class LinksController < ApplicationController
     end
   end
 
+  def edit
+    @link = Link.find(params[:id])
+  end
+
+  def update
+    link = Link.find(params[:id])
+    if link.update(link_params)
+      redirect_to '/'
+    else
+      flash[:notice] = "Link not valid format"
+      render :edit
+    end
+  end
+
   private
   def link_params
     params.require(:link).permit(:url, :title)
