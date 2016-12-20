@@ -13,5 +13,6 @@
   <%= link.title %></br>
   <%= link.url %>
   <%= button_to "Edit", edit_link_path(link), method: :get %>
+  <%= button_to "Mark as Read", {:controller => "reads", :action => "update", :id => link.id} , :method=>:put  %>
 </div></br>
 <% end %>
